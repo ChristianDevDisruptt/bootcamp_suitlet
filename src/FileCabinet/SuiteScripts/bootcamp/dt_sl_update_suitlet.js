@@ -15,6 +15,26 @@ define(['N/record'],
          * @since 2015.2
          */
         const onRequest = (scriptContext) => {
+            const response = {
+                code : 200
+            }
+            const request = JSON.parse(scriptContext.request.body);
+            try {                
+                log.debug('request', request);
+                record.submitFields({
+                    type: record.Type.EMPLOYEE,
+                    id: request.id,
+                    values: {
+                       'comments' : request.note
+                    }
+                });                
+            } catch (error) {
+                log.error('error', error)
+                response.code = 400;
+                response.message = error.message;
+            }
+
+            return scriptContext.response.write(JSON.stringify(response));
 
         }
 

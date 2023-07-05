@@ -1,14 +1,8 @@
-<deploy>
-    <configuration>
-        <path>~/AccountConfiguration/*</path>
-    </configuration>
+<deploy>   
     <files>
-        <path>~/FileCabinet/*</path>
+        <path>~/FileCabinet/SuiteScripts/bootcamp/*</path>
     </files>
     <objects>
         <path>~/Objects/*</path>
-    </objects>
-    <translationimports>
-        <path>~/Translations/*</path>
-    </translationimports>
+    </objects>   
 </deploy>
